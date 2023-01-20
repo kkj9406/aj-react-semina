@@ -1,5 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import scope1 from "./scope/scope1";
+import scope2 from "./scope/scope1";
+// scope1();
+(function () {
+  var MYAPP = {};
+
+  MYAPP.student = {
+    name: "Lee",
+    gender: "male",
+  };
+
+  console.log(MYAPP.student.name);
+})();
+// console.log(MYAPP.student.name);
 
 function App() {
   return (
