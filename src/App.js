@@ -13,22 +13,18 @@ import UseCallback from "./hooks/UseCallback";
 import UseCallback2 from "./hooks/UseCallback2";
 import UseReducer from "./hooks/UseReducer";
 import UseReducer2 from "./hooks/UseReducer2";
+import { funcCall } from "./callback/Callback";
+import { numberCheck, numberCheckThen } from "./promise/PromiseEx";
 
 function App() {
-  return (
-    <div>
-      {/* <UseState></UseState> */}
-      {/* <UseEffect></UseEffect> */}
-      {/* <UseRef></UseRef> */}
-      {/* <UseRef2></UseRef2> */}
-      {/* <UseContext></UseContext> */}
-      {/* <UseMemo></UseMemo> */}
-      {/* <UseMemo2></UseMemo2> */}
-      {/* <UseCallback></UseCallback> */}
-      {/* <UseCallback2></UseCallback2> */}
-      {/* <UseReducer></UseReducer> */}
-      <UseReducer2></UseReducer2>
-    </div>
-  );
+  // funcCall();
+  numberCheck(1);
+  numberCheck(0);
+  numberCheck(-1);
+  numberCheckThen(1);
+  numberCheckThen(0);
+  numberCheckThen(-1);
+
+  return <div>헤헤</div>;
 }
 export default App;
