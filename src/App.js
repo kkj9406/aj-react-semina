@@ -15,16 +15,34 @@ import UseReducer from "./hooks/UseReducer";
 import UseReducer2 from "./hooks/UseReducer2";
 import { funcCall } from "./callback/Callback";
 import { numberCheck, numberCheckThen } from "./promise/PromiseEx";
+import {
+  async1,
+  async2,
+  await1,
+  await2,
+  await3,
+  await4,
+  await5,
+  await6,
+} from "./asyncAwait/Ex";
 
 function App() {
-  // funcCall();
-  numberCheck(1);
-  numberCheck(0);
-  numberCheck(-1);
-  numberCheckThen(1);
-  numberCheckThen(0);
-  numberCheckThen(-1);
-
+  async1().then(console.log); // async 키워드를 붙였는데 promise처럼 쓸수 있다
+  async2().then(console.log); // async 키워드를 붙였는데 promise처럼 쓸수 있다
+  // await1();
+  // await2();
+  // await3().then(console.log).catch(console.log);
+  // await4();
+  await5()
+    .then(console.log)
+    .catch((err) => {
+      console.log("promise catch로 잡음");
+    });
+  await6()
+    .then(console.log)
+    .catch((err) => {
+      console.log("promise catch로 잡음");
+    });
   return <div>헤헤</div>;
 }
 export default App;
