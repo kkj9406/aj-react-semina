@@ -120,7 +120,7 @@ export default Table;
 페이지네이션(pagination)으로 테이블을 렌더링하는 React 컴포넌트를 구현하시오.
 1. 테이블은 table 클래스명을 가지며, NAME, HEIGHT, Last Name 3개의 열을 가지고 있다.
 테이블은 https://swapi.dev/api/people/ 엔드포인트에 가져올 수 있는 모의 데이터로 채워진다.
-이 엔드포인트는 page 매개변수가 필수로 필요하다.(page는 0부터 시작하며, 이 매개변수를 제공하지 않으면
+이 엔드포인트는 page 매개변수가 필수로 필요하다.(page는 1부터 시작하며, 이 매개변수를 제공하지 않으면
 API가 오류를 반환한다.) 다음은 JSON 응답 포맷의 예이다.
 {
 	"count": 82,
