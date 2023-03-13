@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-function Clock({ time }) {
+function Timer() {
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const [time, setTime] = useState(0);
+  const [timerInterval, setTimerInterval] = useState(null);
   const [displayTime, setDisplayTime] = useState("00:00");
 
   useEffect(() => {
@@ -9,16 +13,12 @@ function Clock({ time }) {
       .padStart(2, "0");
     const seconds = (time % 60).toString().padStart(2, "0");
     setDisplayTime(`${minutes}:${seconds}`);
+
+    if (time === 0) {
+      // 시간 0이 되어도 인터벌은 종료되어야 함..
+      clearInterval(timerInterval);
+    }
   }, [time]);
-
-  return <h1 data-testid="running-clock">{displayTime}</h1>;
-}
-
-function Timer() {
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-  const [time, setTime] = useState(0);
-  const [timerInterval, setTimerInterval] = useState(null);
 
   const handleStartTimer = () => {
     const inputTime = minutes * 60 + seconds;
@@ -103,7 +103,7 @@ function Timer() {
       <button onClick={handleStartTimer}>시작</button>
       <button onClick={handlePauseResumeTimer}>일시 중지 / 재개</button>
       <button onClick={handleResetTimer}>초기화</button>
-      <Clock time={time} />
+      <h1 data-testid="running-clock">{displayTime}</h1>
     </React.Fragment>
   );
 }
