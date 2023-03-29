@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Table from "./test/Table";
-import Timer from "./test/Timer";
+require("./thisAndBind/GlobalContext");
+require("./thisAndBind/ObjectMethod");
+require("./thisAndBind/ConstructorMethod");
+require("./thisAndBind/ExBind");
 
 function App() {
-  return <Table></Table>;
-  // return <Timer></Timer>;
+  return <div>asdf</div>;
 }
 export default App;
